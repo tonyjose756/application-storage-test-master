@@ -7,15 +7,43 @@ var key = "skin"; var value = "brown"; window.localStorage.setItem(key, value);
 var key = "shirt"; var value = "blue"; window.localStorage.setItem(key, value);
 var key = "paper"; var value = "white"; window.localStorage.setItem(key, value);
 
+var chocbar= {"chocname":"bounty",
+              "energy kj": "2036",      //declaring variable
+              "energykcal": "487",
+              "fat":"25.7",
+              "carbohydrates":"58.9",
+              "sugar":"48.2",
+              "protein":"3.7",
+              "salt":"0.25"            
+             }
+
+var chocbarstring = JSON.stringify(chocbar);       //turnign json into string
+
+window.localStorage.setItem("chocname",chocbarstring); 
+
+var getchocbar = window.localStorage.getItem("chocname");
+
+var chocbarJSON = JSON.parse(getchocbar);   //convert text to javas object
+
+alert(chocbarJSON.chocname);
+
+
 document.addEventListener("deviceready", onDeviceReady, false);
 	
+
+//function load(){
+ //  $("#launched").text("chocbar");
+//}
 
 var key = "bottle";
 var value = window.localStorage.getItem(key);
 alert (window.localStorage.length);
 
-alert (key + ", " + value);
-$("#launched").text(key + ", " + value);
+//alert (chocbar);
+//$("#launched").text("protein");
+
+//alert (key + ", " + value);
+//$("#launched").text(key + ", " + value);
 	
 function updateDisplay() {
 	$("#launched").text("Application launched: " + launched_count);
