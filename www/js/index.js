@@ -12,6 +12,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 var key = "bottle";
 var value = window.localStorage.getItem(key);
+alert (window.localStorage.length);
 
 alert (key + ", " + value);
 $("#launched").text(key + ", " + value);
